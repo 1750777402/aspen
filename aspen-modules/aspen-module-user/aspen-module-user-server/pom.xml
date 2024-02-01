@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.aspen</groupId>
+        <artifactId>aspen-module-user</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>aspen-module-user-server</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>aspen-module-user-server</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.aspen</groupId>
+            <artifactId>aspen-module-user-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aspen</groupId>
+            <artifactId>aspen-core-service</artifactId>
+            <version>${aspen-core-service.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aspen</groupId>
+            <artifactId>aspen-core-cache</artifactId>
+            <version>${aspen-core-cache.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aspen</groupId>
+            <artifactId>aspen-core-microservices</artifactId>
+            <version>${aspen-core-microservices.version}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

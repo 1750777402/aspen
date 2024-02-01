@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.aspen</groupId>
+        <artifactId>aspen-module-auth</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>aspen-module-auth-server</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.aspen</groupId>
+            <artifactId>aspen-module-user-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.aspen</groupId>
+            <artifactId>aspen-core-web</artifactId>
+            <version>${aspen-core-web.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aspen</groupId>
+            <artifactId>aspen-core-microservices</artifactId>
+            <version>${aspen-core-microservices.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aspen</groupId>
+            <artifactId>aspen-core-security</artifactId>
+            <version>${aspen-core-security.version}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

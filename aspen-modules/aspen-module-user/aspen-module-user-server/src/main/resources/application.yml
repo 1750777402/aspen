@@ -1,0 +1,55 @@
+server:
+  port: 8082
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: user-server
+  datasource:
+    url: jdbc:mysql://127.0.0.0:3306/aspen?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      validationQuery: SELECT 1 FROM DUAL
+      initialSize: 10
+      minIdle: 10
+      maxActive: 200
+      minEvictableIdleTimeMillis: 180000
+      testOnBorrow: false
+      testWhileIdle: true
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      logAbandoned: true
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 100
+      filters: stat,wall,log4j
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+  data:
+    redis:
+      host: 127.0.0.0
+      port: 6379
+      password: 123456789
+
+dubbo:
+  application:
+    logger: slf4j
+    name: user-server
+  registry:
+    address: nacos://${nacos.address:127.0.0.0}:8848?register-consumer-url=true
+    group: ASPEN_GROUP
+    password: nacos
+    username: nacos
+  consumer:
+    check: false
+    timeout: 3000
+    retries: -1
+  scan:
+    base-packages: com.aspen
+  protocol:
+    name: dubbo
+    port: -1
+

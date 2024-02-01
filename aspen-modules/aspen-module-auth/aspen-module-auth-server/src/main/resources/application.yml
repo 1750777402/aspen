@@ -1,0 +1,38 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /auth-server
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: auth-server
+  data:
+    redis:
+      host: 127.0.0.0
+      port: 6379
+      password: 123456789
+
+dubbo:
+  application:
+    logger: slf4j
+    name: auth-server
+  registry:
+    address: nacos://${nacos.address:127.0.0.0}:8848?register-consumer-url=true
+    group: ASPEN_GROUP
+    password: nacos
+    username: nacos
+  consumer:
+    check: false
+    timeout: 3000
+    retries: -1
+  scan:
+    base-packages: com.aspen
+  protocol:
+    name: dubbo
+    port: -1
+
+aspen:
+  log:
+    path: D:/logs/aspen
