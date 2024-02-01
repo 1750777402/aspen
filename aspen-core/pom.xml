@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.2</version>
+    </parent>
+
+    <groupId>com.aspen</groupId>
+    <artifactId>aspen-core</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+    <modules>
+        <module>aspen-core-web</module>
+        <module>aspen-core-service</module>
+        <module>aspen-core-foundation</module>
+        <module>aspen-core-cache</module>
+        <module>aspen-core-microservices</module>
+        <module>aspen-core-security</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <spring.cloud.alibaba.version>2.2.7.RELEASE</spring.cloud.alibaba.version>
+        <springboot-version>3.1.2</springboot-version>
+        <dubbo-version>3.2.10</dubbo-version>
+        <nacos.version>2.2.1</nacos.version>
+        <guava.version>20.0</guava.version>
+        <druid.version>1.2.20</druid.version>
+        <mybatis-flex.version>1.7.7</mybatis-flex.version>
+        <mysql.version>8.0.25</mysql.version>
+        <mysql-connector-j.version>8.0.32</mysql-connector-j.version>
+        <commons.lang.version>3.2.2</commons.lang.version>
+        <commons.io.version>2.6</commons.io.version>
+        <hutool.version>5.3.3</hutool.version>
+        <easyexcel.version>2.2.6</easyexcel.version>
+        <joda.time.version>2.9.9</joda.time.version>
+        <fastjson.version>1.2.76</fastjson.version>
+        <gson.version>2.8.6</gson.version>
+        <jsoup.version>1.11.3</jsoup.version>
+        <lombok.version>1.18.24</lombok.version>
+        <xxl-job.version>2.1.2</xxl-job.version>
+        <commons.beanutils.version>1.9.4</commons.beanutils.version>
+        <commons-httpclient.version>3.1</commons-httpclient.version>
+        <disruptor.version>3.4.2</disruptor.version>
+        <redisson.version>3.25.2</redisson.version>
+        <log4j.version>1.7.25</log4j.version>
+        <jedis.version>5.1.0</jedis.version>
+        <aspectjweaver.version>1.9.1</aspectjweaver.version>
+        <spring.context.support.version>1.0.11</spring.context.support.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <javax.xml.bind.version>2.3.1</javax.xml.bind.version>
+
+
+        <!-- 本地版本 -->
+        <aspen-core-foundation.version>0.0.1-SNAPSHOT</aspen-core-foundation.version>
+        <aspen-core-service.version>0.0.1-SNAPSHOT</aspen-core-service.version>
+        <aspen-core-web.version>0.0.1-SNAPSHOT</aspen-core-web.version>
+        <aspen-core-cache.version>0.0.1-SNAPSHOT</aspen-core-cache.version>
+        <aspen-core-microservices.version>0.0.1-SNAPSHOT</aspen-core-microservices.version>
+        <aspen-core-security.version>0.0.1-SNAPSHOT</aspen-core-security.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-bom</artifactId>
+                <version>${dubbo-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- 要将源码放上去，需要加入这个插件 -->
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
