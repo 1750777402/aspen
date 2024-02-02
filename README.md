@@ -31,7 +31,7 @@
       aspen-module-admin-api： 管理后台的对外暴露接口等
       aspen-module-admin-web： 管理后台服务
     aspen-module-auth：
-      aspen-module-auth-server： 认真服务，主要做鉴权登录相关
+      aspen-module-auth-server： 认证服务，主要做鉴权登录相关
     aspen-module-user：
       aspen-module-user-api： 用户模块对外暴露的接口等
       aspen-module-user-server： 用户模块服务
